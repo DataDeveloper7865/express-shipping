@@ -18,13 +18,13 @@ describe("POST /", function () {
 
   test("invalid Input", async function () {
     const resp = await request(app).post("/shipments").send({
-      productId: 100000000,
+      productId: 100,
       name: "Test Tester",
       addr: "100 Test St",
       zip: "12345-6789",
     });
 
-    expect(resp.body.error.message[0]).toEqual("instance.productId must be less than or equal to 1000");
+    expect(resp.body.error.message[0]).toEqual("instance.productId must be greater than or equal to 1000");
   });
 
 });
