@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://our.domain.com/order.schema.json",
+    "title": "Order",
+    "description": "Order for an ice cream.",
+    "type": "object",
+    "properties": {
+      "productId": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000},
+      "name": {
+        "type": "string"
+      },
+      "addr": {"type": "string"},
+      "zip": {"type": "string",
+            "minLength": 5,
+            "maxLength": 10}
+    },
+    "additionalProperties": false,
+    "required": [
+      "productId",
+      "name",
+      "addr",
+      "zip"
+    ]
+  }
